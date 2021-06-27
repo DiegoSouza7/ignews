@@ -31,6 +31,7 @@ export default function Posts({ posts }: PostsProps) {
         <div className={styles.posts}>
           {posts.map(post => (
             <Link
+              key={post.slug}
               href={session?.activeSubscription
                 ? `/posts/${post.slug}`
                 : `/posts/preview/${post.slug}`
